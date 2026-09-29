@@ -1,0 +1,47 @@
+Convierte la pregunta del usuario a un filtro JSON válido para la API de DQ Observatory.
+
+ESQUEMA ACTUAL:
+{{schema_json}}
+
+SAMPLE VALORES (3 por columna):
+{{sample_json}}
+
+PREGUNTA: "{{question}}"
+
+DEVUELVE SOLO JSON VÁLIDO con estas claves opcionales:
+- "columns": array de nombres de columna a incluir (vacío = todas)
+- "filter_col": nombre de columna a filtrar
+- "filter_op": operador: "eq" | "ne" | "gt" | "gte" | "lt" | "lte" | "in" | "contains"
+- "filter_val": valor (string, number, o array para "in")
+- "date_start": ISO date string (YYYY-MM-DD)
+- "date_end": ISO date string (YYYY-MM-DD)
+- "date_column": nombre de columna de fecha para rango
+
+REGLAS:
+- Solo incluye claves que sean relevantes
+- "in" requiere array en filter_val
+- Fechas en ISO (YYYY-MM-DD)
+- Nombres de columna exactos del esquema
+- Si la pregunta no implica filtro, devuelve {}
+
+EJEMPLOS:
+
+Pregunta: "Muéstrame solo emails que contengan @gmail"
+Respuesta: {"filter_col": "email", "filter_op": "contains", "filter_val": "@gmail", "columns": ["id", "email"]}
+
+Pregunta: "Filtrar edad mayor a 18"
+Respuesta: {"filter_col": "age", "filter_op": "gt", "filter_val": 18}
+
+Pregunta: "Solo registros de 2024"
+Respuesta: {"date_start": "2024-01-01", "date_end": "2024-12-31", "date_column": "created_at"}
+
+Pregunta: "Columnas id y email donde status sea active o pending"
+Respuesta: {"columns": ["id", "email"], "filter_col": "status", "filter_op": "in", "filter_val": ["active", "pending"]}
+
+Pregunta: "Cuántos registros hay"
+Respuesta: {}
+
+AHORA CONVIERTE:
+PREGUNTA: "{{question}}"
+
+RESPUESTA (SOLO JSON):

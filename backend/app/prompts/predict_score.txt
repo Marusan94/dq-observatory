@@ -1,0 +1,33 @@
+Predice el score de calidad tras aplicar limpiezas sugeridas.
+
+PERFIL ACTUAL:
+{{profile_json}}
+
+ISSUES DETECTADOS:
+{{issues_summary}}
+
+LIMPIEZAS PROPUESTAS:
+{{proposed_fixes}}
+
+HISTORIAL ENTRENAMIENTO (ejemplos few-shot):
+- Perfil: missing=15%, dup=5%, validity_issues=20 → Score actual: 62 → Score tras fix: 78 (+16)
+- Perfil: missing=5%, dup=0%, validity_issues=5 → Score actual: 85 → Score tras fix: 92 (+7)
+- Perfil: missing=30%, dup=20%, validity_issues=40 → Score actual: 35 → Score tras fix: 55 (+20)
+
+DEVUELVE SOLO JSON:
+{
+  "predicted_score": numero_0_100,
+  "delta": numero_positivo_o_negativo,
+  "confidence_interval": [min, max],
+  "top_features": [
+    {"feature": "missing_percentage", "impact": -0.45},
+    {"feature": "exact_duplicate_rate", "impact": -0.30},
+    {"feature": "validity_issue_count", "impact": -0.25}
+  ]
+}
+
+REGLAS:
+- Score 0-100
+- Delta = predicted - current
+- Confidence interval realista (±5-15 puntos)
+- top_features: 3-5 features más impactantes con coeficiente

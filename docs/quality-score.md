@@ -1,0 +1,1 @@
+# Quality score — weighted mean: completeness 25, validity 25, consistency 20, uniqueness 15, integrity 15. Each dimension 0-100 from real counts (missing %, invalid rows, dup rate). UI shows contributions (score×weight). Label: Quality Score — calculated per configured rules, not absolute truth.

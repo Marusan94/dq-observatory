@@ -1,0 +1,1 @@
+# Deployment — local (uvicorn + vite), Docker Compose (backend/frontend/postgres), Render (render.yaml: backend web + frontend static + postgres). Health: /health /ready. Env: DATABASE_URL, STORAGE_PATH, MAX_UPLOAD_SIZE_MB, CORS_ORIGINS, LOG_LEVEL.

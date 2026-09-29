@@ -1,0 +1,1 @@
+# Validation — structured DSL {column, operator, value, severity, name}, operators: not_null/unique/between/gte/lte/eq/in/regex/valid_email/valid_date. No eval/exec. Profiles: general/crm/sales/education + custom rules per dataset. Run returns passed/failed per rule + rows affected. UI: rule builder (column/condition/value/severity) + results.

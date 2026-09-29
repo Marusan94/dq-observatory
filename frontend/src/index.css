@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DQ Observatory — night-instrument theme.
+   One memorable accent (brass), quiet disciplined surfaces,
+   tabular numerals for instrument readouts. */
+:root {
+  color-scheme: dark;
+  --ink: #0b0e14;
+  --panel: #121826;
+  --panel-2: #0f1522;
+  --line: #232c40;
+  --line-soft: #1a2233;
+  --text: #e9edf5;
+  --muted: #9aa5b8;
+  --brass: #d9a441;
+  --brass-deep: #8a6420;
+  --on-brass: #1a1408;
+  --danger: #e5484d;
+  --ok: #46a97e;
+  --info: #6b8afd;
+}
+
+body {
+  background:
+    radial-gradient(1200px 500px at 80% -10%, rgba(217, 164, 65, 0.06), transparent 60%),
+    var(--ink);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-feature-settings: "cv11";
+}
+
+::selection { background: rgba(217, 164, 65, 0.35); }
+
+h1, h2 { letter-spacing: -0.015em; }
+.text-3xl { font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 40%), var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--text);
+  white-space: nowrap;
+}
+button.badge { cursor: pointer; transition: border-color 120ms ease, color 120ms ease; }
+button.badge:hover { border-color: var(--brass); color: var(--brass); }
+
+input, select, textarea {
+  color-scheme: dark;
+  border: 1px solid transparent;
+}
+input:focus, select:focus, textarea:focus, button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 1px;
+}
+
+table.dq { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+table.dq th {
+  position: sticky; top: 0;
+  background: var(--panel-2);
+  text-align: left; padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted); font-weight: 600;
+}
+table.dq td { padding: 8px 10px; border-bottom: 1px solid var(--line-soft); }
+table.dq tbody tr:hover td { background: rgba(217, 164, 65, 0.05); }
+
+pre { font-variant-numeric: tabular-nums; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #2a3450; border-radius: 8px; border: 2px solid var(--ink); }
+::-webkit-scrollbar-track { background: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
+}

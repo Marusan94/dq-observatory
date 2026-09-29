@@ -1,0 +1,1 @@
+# API — versioned /api/v1, OpenAPI at /docs, pagination (page/page_size/sort/filter), error {code,message,details,request_id}. Flow: POST datasets → profile → quality/run → issues → clean → validate → report → export.

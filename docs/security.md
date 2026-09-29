@@ -1,0 +1,1 @@
+# Security — file ext/MIME/size/encoding checks, safe filenames, traversal guard, ORM params, CSV-injection sanitize on XLSX/CSV export, no eval/exec/shell from input, validation DSL allowlist, CORS allowlist, request_id error model (no stack traces to user), PII only as potential + never sent externally. Tests: traversal, injection, malformed files, XSS values.

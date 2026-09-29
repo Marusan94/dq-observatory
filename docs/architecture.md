@@ -1,0 +1,1 @@
+# Architecture — modular monolith (React → FastAPI → Services → Engines → Pandas → PG/SQLite → Storage). API calls services, services call engines, engines are pure `analyze(df, config) → issues/metrics`. Partial failure: one engine never kills the run (warning + continue). See README diagram.

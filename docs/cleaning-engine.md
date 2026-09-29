@@ -1,0 +1,1 @@
+# Cleaning engine — ops: trim_whitespace, normalize_email/phone, remove_exact_duplicates, standardize_missing/categories, parse_numeric. Every apply: preview first, new version (never mutates original/v1), CleaningOperation log (from/to/affected/params/actor), AuditLog, recomputed score, before/after rows+score. Undo = lineage back to any version; reset = point to v1.

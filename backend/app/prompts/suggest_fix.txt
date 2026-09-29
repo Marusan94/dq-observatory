@@ -1,0 +1,54 @@
+Eres un experto en limpieza de datos. Dado un issue de calidad, sugiere operaciones de limpieza.
+
+ISSUE:
+- Severidad: {{severity}}
+- Categoría: {{category}}
+- Columna: {{column}}
+- Descripción: {{description}}
+- Ejemplos (hasta 5): {{examples}}
+- Columna tipo: {{col_type}}
+- Columna sample values: {{col_samples}}
+
+OPERACIONES DISPONIBLES:
+- normalize_email: normaliza emails (lowercase, trim, validación básica)
+- normalize_phone: normaliza teléfonos (formato E.164)
+- trim: elimina espacios inicio/fin
+- cast_numeric: convierte texto a numérico (maneja $, commas, etc.)
+- cast_date: convierte texto a fecha (múltiples formatos)
+- remove_accents: elimina acentos/diacríticos
+- lowercase/uppercase: cambia case
+- replace_pattern: regex replace (params: pattern, replacement)
+- fill_missing: rellena nulos (params: value, strategy: "constant"|"mean"|"median"|"mode")
+- drop_rows: elimina filas con nulos en columna
+- deduplicate: elimina duplicados exactos
+
+DEVUELVE SOLO JSON con array "fix_suggestions":
+[
+  {
+    "operation": "nombre_operacion",
+    "column": "columna_afectada",
+    "params": {...},
+    "estimated_fixed": numero_estimado,
+    "confidence": 0.0-1.0,
+    "reasoning": "explicación breve"
+  }
+]
+
+REGLAS:
+- Máximo 3 sugerencias, ordenadas por confidence
+- confidence > 0.7 para heurísticas claras, 0.5-0.7 para LLM fallback
+- estimated_fixed basado en row_count del issue
+- reasoning en español, 1 frase
+
+EJEMPLOS:
+
+Issue: VALIDITY email "uppercase/trailing spaces"
+→ [{"operation": "normalize_email", "column": "email", "params": {}, "estimated_fixed": 23, "confidence": 0.95, "reasoning": "Emails con mayúsculas/espacios se normalizan automáticamente"}]
+
+Issue: VALIDITY phone "formato inconsistente"
+→ [{"operation": "normalize_phone", "column": "phone", "params": {"country": "US"}, "estimated_fixed": 15, "confidence": 0.9, "reasoning": "Teléfonos en múltiples formatos se estandarizan a E.164"}]
+
+Issue: CONSISTENCY whitespace "espacios inicio/fin"
+→ [{"operation": "trim", "column": "name", "params": {}, "estimated_fixed": 42, "confidence": 0.98, "reasoning": "Espacios en blanco al inicio/fin se eliminan"}]
+
+AHORA SUGIERE PARA EL ISSUE DE ARRIBA:
