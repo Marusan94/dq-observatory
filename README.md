@@ -16,6 +16,8 @@ Profile, validate, clean and monitor tabular datasets with a transparent data qu
 
 `Analyze a dataset` · `Try demo dataset` — [`data/demo/customers_sales.csv`](data/demo/customers_sales.csv) (5200 rows, score ~66/100, 23 issues)
 
+![Recorrido guiado — tour de 6 pasos: nav → dataset → drift → correlations → jobs → webhooks](screenshots/tour.gif)
+
 </div>
 
 ---
