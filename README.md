@@ -26,6 +26,7 @@ Profile, validate, clean and monitor tabular datasets with a transparent data qu
 
 - [✨ Features](#-features)
 - [📸 Screenshots](#-screenshots)
+- [📊 Caso de estudio](#-caso-de-estudio)
 - [🚀 Quickstart](#-quickstart)
 - [📖 Usage](#-usage)
 - [🛠️ API Reference](#-api-reference)
@@ -73,6 +74,22 @@ Profile, validate, clean and monitor tabular datasets with a transparent data qu
 | ![](screenshots/11-column-detail.png) | ![](screenshots/12-settings.png) | ![](screenshots/12-search.png) |
 
 > More captures in [`screenshots/`](screenshots/) — issue detail, fix applied, HTML report, ZIP export.
+
+---
+
+## 📊 Caso de estudio
+
+**Dataset**: demo seed (`data/demo/customers_sales.csv`, 5200 filas con errores típicos del mundo real). Análisis ejecutado contra la API el 2026-09-29 — todos los números de abajo son respuestas reales, reproducibles con `POST /api/v1/datasets/demo/seed`.
+
+| Paso | Resultado |
+|------|-----------|
+| Perfil inicial | **Score 65.7/100** — completeness 79.6 · validity 72.5 · **consistency 0** · uniqueness 88.6 · integrity 95.6 |
+| Issues (24) | 2 HIGH (`customer_id` integridad, `email` validez) · 10 MEDIUM · 12 LOW — top categorías: completeness (9), consistency (5), anomaly (3) |
+| `normalize_email` (preview → apply) | Preview: 78 filas afectadas. **Score sin cambios** — normalizar formato ≠ corregir validez: hallazgo honesto, no toda limpieza mueve la aguja |
+| `remove_exact_duplicates` (apply) | **5200 → 5003 filas (197 duplicados exactos fuera) · score 65.7 → 67.9 (+2.2)** |
+| Re-ejecuciones | 0 filas, score estable — las operaciones son idempotentes y cada paso crea versión (linaje v1→v5, undo disponible) |
+
+**Lectura de analista**: el dataset pierde más por **consistencia (0/20)** — ciudades y categorías con 5+ variantes (`Bogota`/`bogota`/`BOGOTA`…) — que por nulos. El siguiente paso rentable sería `standardize_categories`, no más dedup. Eso es lo que el score transparente permite decidir.
 
 ---
 
