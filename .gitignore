@@ -8,3 +8,7 @@ storage_test/
 *.db
 .env
 .DS_Store
+
+frontend/playwright-report/
+frontend/test-results/
+
