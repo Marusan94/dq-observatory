@@ -91,6 +91,8 @@ Profile, validate, clean and monitor tabular datasets with a transparent data qu
 
 **Lectura de analista**: el dataset pierde más por **consistencia (0/20)** — ciudades y categorías con 5+ variantes (`Bogota`/`bogota`/`BOGOTA`…) — que por nulos. El siguiente paso rentable sería `standardize_categories`, no más dedup. Eso es lo que el score transparente permite decidir.
 
+→ La historia continúa en el **notebook predictivo** [`notebooks/customer_segmentation.ipynb`](notebooks/customer_segmentation.ipynb): del dato sucio al modelo (EDA + baseline RandomForest, todo ejecutable).
+
 ---
 
 ## 🚀 Quickstart
