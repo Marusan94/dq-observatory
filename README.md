@@ -18,6 +18,8 @@ Profile, validate, clean and monitor tabular datasets with a transparent data qu
 
 ![Recorrido guiado — tour de 6 pasos: nav → dataset → drift → correlations → jobs → webhooks](screenshots/tour.gif)
 
+🎬 [Video del recorrido (28s)](docs/demo-tour.webm)
+
 </div>
 
 ---
@@ -92,6 +94,8 @@ Profile, validate, clean and monitor tabular datasets with a transparent data qu
 **Lectura de analista**: el dataset pierde más por **consistencia (0/20)** — ciudades y categorías con 5+ variantes (`Bogota`/`bogota`/`BOGOTA`…) — que por nulos. El siguiente paso rentable sería `standardize_categories`, no más dedup. Eso es lo que el score transparente permite decidir.
 
 → La historia continúa en el **notebook predictivo** [`notebooks/customer_segmentation.ipynb`](notebooks/customer_segmentation.ipynb): del dato sucio al modelo (EDA + baseline RandomForest, todo ejecutable).
+
+**Contrapunto con datos reales**: el Titanic (`datasciencedojo/datasets`, 891 filas) audita **96.0/100** — completeness 83.8 (Cabin HIGH, Age/Embarked LOW) y 100 en el resto, con 8 issues (3 completitud + 5 anomalías). Dato real ≠ dato perfecto, pero el caos del demo (consistency 0) no aparece. Reproducible: `curl` el CSV → `POST /api/v1/datasets` → `POST .../quality/run`.
 
 ---
 
