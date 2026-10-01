@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔭 DQ Observatory
+# 📊 DQ Observatory
 
 **Understand the quality of your data before it reaches production.**
 
@@ -16,7 +16,7 @@ Profile, validate, clean and monitor tabular datasets with a transparent data qu
 
 `Analyze a dataset` · `Try demo dataset` — [`data/demo/customers_sales.csv`](data/demo/customers_sales.csv) (5200 rows, score ~66/100, 23 issues)
 
-🌐 **La app en vivo (un solo link)**: [úsala aquí →](https://dq-frontend.onrender.com) · [API para desarrolladores](https://dq-backend-vz1v.onrender.com/docs)
+🌐 **La app en vivo (un solo link)**: [úsala aquí →](https://dq-observatory.onrender.com) · [API para desarrolladores](https://dq-backend-vz1v.onrender.com/docs)
 
 ![Recorrido guiado — tour de 6 pasos: nav → dataset → drift → correlations → jobs → webhooks](screenshots/tour.gif)
 
@@ -228,7 +228,7 @@ Deep dive: [`docs/architecture.md`](docs/architecture.md)
 |--------|-----|
 | **Local** | `scripts/start-demo.ps1` (Windows) or manual Quickstart — uvicorn + vite, SQLite |
 | **Docker Compose** | `docker compose up --build` (backend/frontend/postgres) |
-| **Render** | Blueprint [`render.yaml`](render.yaml): backend Python (`pip install -r backend/requirements.txt`, `uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port $PORT`, health `/health`) + frontend Static (`npm ci && npm run build`, publish `frontend/dist`) + Postgres free. Set `DATABASE_URL`, `CORS_ORIGINS`. **En vivo**: [frontend](https://dq-frontend.onrender.com) · [backend](https://dq-backend-vz1v.onrender.com/docs). |
+| **Render** | Blueprint [`render.yaml`](render.yaml): backend Python (`pip install -r backend/requirements.txt`, `uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port $PORT`, health `/health`) + frontend Static (`npm ci && npm run build`, publish `frontend/dist`) + Postgres free. Set `DATABASE_URL`, `CORS_ORIGINS`. **En vivo**: [frontend](https://dq-observatory.onrender.com) · [backend](https://dq-backend-vz1v.onrender.com/docs). |
 
 Details: [`docs/deployment.md`](docs/deployment.md)
 

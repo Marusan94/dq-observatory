@@ -7,7 +7,7 @@
 
 ## Post 1 — Anuncio del proyecto
 
-Limpiar datos es el 80% del trabajo en datos. Así que construí la herramienta que siempre quise tener. 🔭
+Limpiar datos es el 80% del trabajo en datos. Así que construí la herramienta que siempre quise tener. 📊
 
 **DQ Observatory** — plataforma open source para perfilar, validar, limpiar y auditar datasets tabulares antes de que lleguen a producción:
 
