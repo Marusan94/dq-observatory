@@ -16,7 +16,7 @@ Profile, validate, clean and monitor tabular datasets with a transparent data qu
 
 `Analyze a dataset` · `Try demo dataset` — [`data/demo/customers_sales.csv`](data/demo/customers_sales.csv) (5200 rows, score ~66/100, 23 issues)
 
-🌐 **Demo en vivo**: [Frontend](https://dq-frontend.onrender.com) · [API + docs](https://dq-backend-vz1v.onrender.com/docs)
+🌐 **La app en vivo (un solo link)**: [úsala aquí →](https://dq-frontend.onrender.com) · [API para desarrolladores](https://dq-backend-vz1v.onrender.com/docs)
 
 ![Recorrido guiado — tour de 6 pasos: nav → dataset → drift → correlations → jobs → webhooks](screenshots/tour.gif)
 
