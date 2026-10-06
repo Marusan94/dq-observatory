@@ -299,6 +299,19 @@ Sync path is best for ≤100k rows; larger sets need chunk/jobs (statuses `QUEUE
 
 ---
 
+## 🎮 Demo en vivo
+
+[https://dq-observatory.onrender.com](https://dq-observatory.onrender.com) · [API docs](https://dq-backend-vz1v.onrender.com/docs) — prueba el dataset demo (5200 filas, score ~66/100) sin subir nada.
+
+## 🔧 Casos de uso
+
+| Perfil | Qué haces |
+|--------|-----------|
+| **Data Engineer** | Sube CSV → perfilado determinístico → score transparente → exporta limpio + auditoría |
+| **Analista de negocio** | Dashboard de issues por severidad → auto-fix → reportes ejecutivos before/after |
+| **ML Engineer** | Detecta drift (KS/PSI/KL) entre versiones → lineage DAG → notebook predictivo adjunto |
+| **Equipo / Governance** | Contratos de datos + SLA `min_score` → webhooks HMAC → RBAC roles (owner/admin/editor/viewer) |
+
 ## 📄 License
 
 MIT — see [LICENSE](LICENSE).
