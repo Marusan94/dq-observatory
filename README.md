@@ -26,6 +26,18 @@ Profile, validate, clean and monitor tabular datasets with a transparent data qu
 
 ---
 
+## 🧭 El proyecto en breve
+
+**Puerta de calidad automática para tus datos**
+
+- **Problema:** Duplicados, vacíos y drift llegan a producción y rompen reportes.
+- **Automatización:** Subes un CSV y obtienes perfilado, puntaje por dimensiones y alertas, sin configurar nada.
+- **Resultado:** El error se detecta antes de costar dinero.
+
+`React` · `FastAPI` · `Pandas` — [Demo →](https://dq-observatory.onrender.com) · [Código →](https://github.com/Marusan94/dq-observatory)
+
+---
+
 ## 📖 Table of Contents
 
 - [✨ Features](#-features)
