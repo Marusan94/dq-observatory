@@ -8,13 +8,13 @@ Profile, validate, clean and monitor tabular datasets with a transparent data qu
 
 [![Tests](https://img.shields.io/badge/tests-27%2F27_PASS-brightgreen)](backend/tests)
 [![Build](https://img.shields.io/badge/build-PASS-brightgreen)](frontend/dist)
-[![E2E](https://img.shields.io/badge/E2E_Playwright-6%2F6_PASS-brightgreen)](frontend/e2e)
+[![E2E](https://img.shields.io/badge/E2E_Playwright-7%2F7_PASS-brightgreen)](frontend/e2e)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Stack](https://img.shields.io/badge/stack-FastAPI_%2B_React-orange)](docs/architecture.md)
 [![Python](https://img.shields.io/badge/python-3.11-blue)](backend/requirements.txt)
 [![Node](https://img.shields.io/badge/node-18%2B-green)](frontend/package.json)
 
-`Analyze a dataset` · `Try demo dataset` — [`data/demo/customers_sales.csv`](data/demo/customers_sales.csv) (5200 rows, score ~66/100, 23 issues)
+`Analyze a dataset` · `Try demo dataset` — [`data/demo/customers_sales.csv`](data/demo/customers_sales.csv) (5200 rows, score ~66/100, 24 issues)
 
 🌐 **La app en vivo (un solo link)**: [úsala aquí →](https://dq-observatory.onrender.com) · [API para desarrolladores](https://dq-backend-vz1v.onrender.com/docs)
 
@@ -167,7 +167,7 @@ curl -X POST http://localhost:8000/api/v1/datasets/demo/seed
 
 # 2. Run quality scoring
 curl http://localhost:8000/api/v1/datasets/<DATASET_ID>/quality
-# → {"score":65.7,"dimensions":{...}}   # ~66/100, 23 issues expected
+# → {"score":65.7,"dimensions":{...}}   # ~66/100, 24 issues expected
 
 # 3. Explore issues, then auto-fix one
 curl "http://localhost:8000/api/v1/datasets/<DATASET_ID>/issues?severity=high"
@@ -227,7 +227,7 @@ flowchart LR
   SVC --> ENG[Engines: type/missing/duplicate/pattern/category/date/numeric/outlier]
   ENG --> PAN[Pandas/NumPy/PyArrow]
   SVC --> DB[(PostgreSQL / SQLite)]
-  SVC --> STO[Storage: Local / S3-future]
+  SVC --> STO[Storage: Local / S3]
 ```
 
 Deep dive: [`docs/architecture.md`](docs/architecture.md)
@@ -255,12 +255,12 @@ cd backend && python -m pytest -q
 # Benchmarks (measured)
 $env:PYTHONPATH='backend'; python scripts/benchmark.py
 # 1k rows → 2.34s / 0.87MB / score 67.6 / 22 issues
-# 5.2k rows → 7.5s / 4.51MB / score 65.7 / 23 issues
+# 5.2k rows → 7.5s / 4.51MB / score 65.7 / 24 issues
 
 # Frontend build
 cd frontend && npm run build   # PASS ~13s, 891 modules, lazy chunks
 
-# E2E (Playwright) — 6 tests: journey, tour, nav, RBAC, pause/resume, drift validation
+# E2E (Playwright) — 7 tests: journey, tour, nav smoke, RBAC, pause/resume, contracts CRUD, drift validation
 cd frontend && npx playwright test
 ```
 
