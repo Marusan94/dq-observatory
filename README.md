@@ -93,9 +93,6 @@ Profile, validate, clean and monitor tabular datasets with a transparent data qu
 ## 🎬 Demo en video
 
 [Video del recorrido (28s)](docs/demo-tour.webm)
-| ![](screenshots/11-column-detail.png) | ![](screenshots/12-settings.png) | ![](screenshots/12-search.png) |
-
-> More captures in [`screenshots/`](screenshots/) — issue detail, fix applied, HTML report, ZIP export.
 
 ---
 
