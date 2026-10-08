@@ -81,12 +81,18 @@ Profile, validate, clean and monitor tabular datasets with a transparent data qu
 
 ## 📸 Screenshots
 
-| Overview | Issues + auto-fix | Cleaning | Reports before/after |
-|----------|-------------------|----------|----------------------|
-| ![](screenshots/02-overview-score.png) | ![](screenshots/03-issues-auto-fix.png) | ![](screenshots/06-cleaning.png) | ![](screenshots/07-reports-before-after.png) |
+| Vista | Captura |
+|-------|---------|
+| Score 65.7 + dimensiones | ![Overview](screenshots/overview.png) |
+| Issues con auto-fix | ![Issues](screenshots/issues.png) |
+| Drift (KS/PSI form) | ![Drift](screenshots/drift.png) |
 
-| Column detail | Settings | Search |
-|---------------|----------|--------|
+> Capturadas con Playwright (1366×768) del demo vivo https://dq-observatory.onrender.com  
+> **Nota honesta**: el backend en producción tiene CORS roto y drift sin gráficas reales — ver commit message para detalles.
+
+## 🎬 Demo en video
+
+[Video del recorrido (28s)](docs/demo-tour.webm)
 | ![](screenshots/11-column-detail.png) | ![](screenshots/12-settings.png) | ![](screenshots/12-search.png) |
 
 > More captures in [`screenshots/`](screenshots/) — issue detail, fix applied, HTML report, ZIP export.
